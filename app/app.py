@@ -223,22 +223,6 @@ def viewAppPrediction():
     else:
         return render_template('viewAppPrediction.html')
 
-""" @app.route('/viewSupportVector',methods=['POST','GET'])
-def viewSupportVector():
-    if request.method=='POST':
-        datos=[request.form.values()]
-
-        json=request.get_json(force=True)
-        datos = json['datos']
-        
-        clasif = joblib.load('modelo.pkl')
-        prediccion=clasif.predict(datos)
-
-
-    return render_template('viewSupportVector.html') """
-
-
-
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 5000))
