@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PROYECTO | PROYECTO APP WEB</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Andres y Alex" name="author">
+    <meta content="Proyecto de titulación" name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static',filename='lib/owlcarousel/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}"/>
+
+    <!-- Customized Bootstrap Stylesheet -->
+<!--     <link rel="stylesheet" href="{{url_for('static',filename='css/style.min.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar offer   py-5 text-center position-relative overlay-bottom">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="{{url_for('index')}}" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-color">PROJECT</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="{{url_for('index')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{url_for('informacion')}}" class="nav-item nav-link active">Proyecto</a>
+                    <a href="{{url_for('viewAppPrediction')}}" class="nav-item nav-link active">Predicción</a>
+                    <a href="{{url_for('estadistica')}}" class="nav-item nav-link active">Estadística</a>
+                    <a href="{{url_for('contacto')}}" class="nav-item nav-link active">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="base">
+        <div class="contenedor">
+
+            <div class=" section-title-temas" style="font-size: 35px;"> DESARROLLO DE UN MODELO DE MACHINE LEARNING
+             PARA LA PREDICCIÓN DE PÉRDIDA DE CLIENTES CON TARJETA DE CRÉDITO DE INSTITUCIONES FINANCIERAS</div>
+
+        </div>
+        <div class="contenedor">
+            <div class="positionImg">
+                <img class="positionImg post" src="{{ url_for('static', filename='img/portada.png') }}" style="object-fit: cover;">
+            </div>
+        </div>
+    
+        <div class="contenedor ">
+           <div class="centrar-div">
+            <div class="section-title " style="padding-top: 0%;"> 
+                Descripción
+             </div>
+            <div>
+                <h5 class="mb-3"> En esta actualidad, las tarjetas de crédito siguen siendo un producto 
+                    financiero muy importante para las instituciones financieras donde muchas personas 
+                    las utilizan para realizar comprar diarias y cubrir gastos importantes, lo que genera
+                     ingresos para las instituciones financieras en forma de intereses, comisiones y otros 
+                     cargos. Además, las tarjetas de crédito es la opción de pago usado a nivel mundial.  
+                </h5>
+                <h5 class="mb-3">
+                    Sin embargo, la mala utilización de las tarjetas de crédito por parte de los 
+                    consumidores sigue siendo un problema importante y un reto que enfrentan las 
+                    instituciones financieras. La situación más delicada es el aumento de riesgo crediticio,
+                     analizando Cárdenas (2021), afirma que “el riesgo crediticio, al no contar con
+                      instrumentos que posibiliten su detección y análisis, suscita pérdida de competitividad
+                       de las instituciones financieras, genera desconfianza entre socios y lleva a situaciones
+                        de quiebre” (p.15). 
+               </h5>
+               <h5 class="mb-3">
+                Si los clientes no utilizan sus tarjetas de créditos de manera responsable y 
+                acumulan una gran cantidad de deuda no pueden ser capaces de pagar lo que puede 
+                llevar al incumplimiento y a la generación de deudas incobrables, estaría afectando
+                 negativamente el balance general de las instituciones financieras y su capacidad 
+                 para prestar dinero, además la pérdida de clientes también podrá generar pérdida 
+                 de ingreso y costo adquisición de los clientes.  
+           </h5>
+                <h5 class="mb-3">
+                    Este estudio tiene como objetivo construir un modelo predictivo que permite detectar con anticipación a 
+                    los clientes con mayor riesgo de incumplimiento en los pagos, reducir el riesgo crediticio y evitar la 
+                    pérdida de clientes. 
+                </h5>
+            </div>
+           </div>
+        </div>
+        
+        <div class="contenedor ">
+            <div class="centrar-div">
+                <div class="section-title " style="padding-top: 0%;"> 
+                    Formulación del Problema
+                 </div>
+             <div>
+
+                 <h5 class="mb-3">¿Es posible tener un modelo predictivo con inteligencia artificial en 
+                    la predicción de pérdida de clientes con tarjeta de crédito basado en el aprendizaje 
+                    de máquina con algoritmos de aprendizaje supervisado?
+                 </h5>
+               
+             
+             </div>
+            </div>
+         </div>
+
+         <div class="contenedor ">
+            <div class="centrar-div">
+                <div class="section-title " style="padding-top: 0%;"> 
+                    Objetivos del proyecto
+                 </div>
+             <div>
+                <h1 class="mb-3" style="font-size: 30px; color: gray;"> Objetivo General</h1>
+                 <h5 class="mb-3">Desarrollar un modelo de   machine   learning   mediante   algoritmos 
+                    de   aprendizaje supervisado para la predicción de pérdida de clientes con tarjeta de 
+                    crédito de instituciones financieras.
+                 </h5>
+                 
+                 <h1 class="mb-3" style="font-size: 30px; color: gray;"> Objetivo Específicos</h1>
+                 <h5 class="mb-3">•	Identificar los algoritmos de machine learning y una dataset de un 
+                    repositorio público que permite entrenar el modelo con aprendizaje supervisado para 
+                    la clasificación de datos de pérdida de clientes de instituciones financieras.
+                 </h5>
+                 <h5 class="mb-3">•	Diseñar el entrenamiento del modelo con machine learning con
+                     los algoritmos de aprendizaje supervisado para la predicción del rendimiento
+                      de pérdida de clientes con tarjeta de crédito.
+                 </h5>
+                 <h5 class="mb-3">•	Evaluar el modelo obtenido con los diferentes algoritmos de 
+                    aprendizaje supervisado mediante las métricas de clasificación y juicio de expertos 
+                    para la obtención del mejor modelo entrenado.
+                </h5>
+                <h5 class="mb-3">•	Implementar una página web para la producción del modelo entrenado para
+                     la predicción de pérdida de clientes con tarjeta de crédito
+                </h5>
+             
+             </div>
+            </div>
+         </div>
+
+         <div class="contenedor ">
+            <div class="centrar-div">
+                <div class="section-title " style="padding-top: 0%;"> 
+                   Alcance del Proyecto
+                 </div>
+             <div>
+
+                 <h5 class="mb-3">
+                    * Se realizó una búsqueda sistemática de algoritmos de Machine Learning con aprendizaje Supervisado, lo cual se realizará búsquedas en repositorios y revistas indexadas como Scielo, Redalyc, Dialnet, Science Direct, entre otros para seleccionar investigación que se refieran al problema de pérdida de clientes con tarjeta de crédito en instituciones financiera. 
+                 </h5>
+               <h5 class="mb-3">
+                * Se buscó un dataset de características de clientes con tarjeta de crédito en repositorios públicos de machine learning.
+
+               </h5>
+               <h5 class="mb-3">
+                * Se diseñó los algoritmos de machine learning con aprendizaje supervisado para el entrenamiento de modelo con los datos de la dataset seleccionada. 
+  
+               </h5>
+               <h5 class="mb-3">
+                * Se aplicó el cálculo de la matriz de confusión y métricas para realizar validación cruzada al modelo con los algoritmos implementados.
+
+               </h5>
+               <h5 class="mb-3">
+                * Se desarrolló el prototipo de página web con el modelo mejor entenado de los algoritmos de machine learning aplicado al aprendizaje supervisado para su producción en tiempo real.
+
+               </h5>
+               <h5 class="mb-3">
+                * Se realizó una encuesta de factibilidad de la propuesta del prototipo web al público adulto en general o entrevistas a profesionales de instituciones financieras. 
+
+               </h5>
+               <h5 class="mb-3">
+                * Se realizó un juicio de expertos con profesionales de Inteligencia Artificial para la validación de los resultados obtenidos de la investigación.
+
+               </h5>
+               <h5 class="mb-3">
+                * Se usó el lenguaje de programación Python con el entorno de Google Colab y el framework Django o Flash para el prototipo de la página web. 
+
+               </h5>
+
+             
+             </div>
+            </div>
+         </div>
+
+         <div class="contenedor " >
+            <div class="centrar-div">
+                <div class="section-title " style="padding-top: 0%;"> 
+                    Justificación e Importancia
+                 </div>
+             <div>
+
+               <div class="grupoTextosInfo d-flex "  >
+                    <div class="textoInfo" style="background-color: rgb(167, 184, 199);">
+                        <h5 class="mb-3 col py-0 py-lg-5 ">La importancia por el cual se lleva a cabo este 
+                            proyecto radica en la importancia de que las instituciones financieras cuenten 
+                            con herramientas eficientes y precisas para identificar los clientes que presenten 
+                            un mayor riesgo de pérdida, y de esta manera, lo que permitirá a estas últimas tomar
+                             medidas preventivas para reducir su riesgo crediticio y mejorar su rentabilidad a
+                              largo plazo. 
+                        </h5>
+                        
+                    </div>
+                    <div class="textoInfo">
+                        <h5 class="mb-3 col py-0 py-lg-5" >El modelo de machine learning puede proporcionar tanto
+                            a la sociedad en general como instituciones financieras y a los propios clientes. 
+                            Para mejorar la toma de decisiones, el modelo predictivo permitirá tomar decisiones
+                            más fundamentadas y basadas en datos con respecto a la concesión y retención de 
+                            tarjeta de crédito esto puede ayudar a evitar situaciones de impago y a 
+                            proporcionar servicios financieros adecuados y personalizado para los clientes. 
+                       </h5>
+                    </div>
+                    
+               </div>
+               <div class="grupoTextosInfo d-flex">
+                    <div class="textoInfo" style="background-color: rgb(218, 187, 214);">
+                        <h5 class="mb-3 col py-0 py-lg-5"  >Algunos problemas prácticos que ayudaría a resolver en el
+                            ámbito financiero son en la gestión de riesgo crediticio en identificar de manera más precisa 
+                            y temprana a los clientes que presentan un mayor riesgo de tarjetas de crédito, también en 
+                            retención de clientes en donde el modelo aportaría a la institución financiera tomar medida para 
+                            retener aquellos clientes que presentan un mayor riesgo de abandono.  
+                        </h5>
+                        
+                    </div>
+                    <div class="textoInfo" style="background-color: rgb(190, 187, 218);">
+                        <h5 class="mb-3 col py-0 py-lg-5" >El desarrollo de las técnica de machine learning contribuiría en 
+                            mejorar modelos existente como en los algoritmos de predicción de pérdida de clientes con tarjeta 
+                            de crédito, además como el resultados de análisis obtenido puede relevar patrones, tendencia y 
+                            relaciones hasta ahora desconocido en la predicción de cliente con tarjeta de créditos lo que podría 
+                            permitir que los nuevos hallazgo genere nuevo conocimiento y abrir el camino para futuras 
+                            investigaciones en el campo de riesgo de crediticio y el comportamiento del cliente.  
+                        </h5>
+                    </div>
+                </div>
+               
+             
+             </div>
+            </div>
+         </div>
+
+
+
+
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5  pt-5 px-0 position-relative overlay-top">
+       
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="m-0 text-white">Desarrollo Aplicación Web</a></p>
+            <p class="mb-2 text-white">Copyright All Rights Reserved.</a></p>
+
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{{ url_for('static', filename='mail/jqBootstrapValidation.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='mail/contact.js') }}"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

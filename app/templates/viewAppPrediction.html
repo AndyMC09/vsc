@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PREDICCION | PROYECTO APP WEB</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Andres y Alex" name="author">
+    <meta content="Proyecto de titulación" name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static',filename='lib/owlcarousel/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}"/>
+
+    <!-- Customized Bootstrap Stylesheet -->
+<!--     <link rel="stylesheet" href="{{url_for('static',filename='css/style.min.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar offer   py-5 text-center position-relative overlay-bottom">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="{{url_for('index')}}" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-color">PROJECT</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="{{url_for('index')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{url_for('informacion')}}" class="nav-item nav-link active">Proyecto</a>
+                    <a href="{{url_for('viewAppPrediction')}}" class="nav-item nav-link active">Predicción</a>
+                    <a href="{{url_for('estadistica')}}" class="nav-item nav-link active">Estadística</a>
+                    <a href="{{url_for('contacto')}}" class="nav-item nav-link active">Contacto</a>
+                </div>
+            </div>
+        </nav>
+        <!-- <h1 class=" text-white ">DESARROLLO DE UN MODELO DE MACHINE LEARNING
+            PARA LA PREDICCIÓN DE PÉRDIDA DE CLIENTES CON TARJETA DE CRÉDITO DE INSTITUCIONES FINANCIERAS</h1> -->
+    </div>
+    
+
+
+    <!-- FORM  -->
+    <div class="container-fluid ">
+        <div class="section-title "style="font-size: 60px;">APP DE PREDICCIONES</div>
+        <div class="container">
+            <div class="mb-4">
+                <h1 class="" style="text-align: center;"></h1>
+            </div>
+            <div class="fondo position-relative overlay-top overlay-bottom">
+                <div class="mb-4">
+                    <h1 class="display-3 text-primary" style="text-align: center;">INGRESO DE DATOS</h1>
+                    <!-- <h1 class="text-white">For Online Reservation asdasdasdasdasdasdasd</h1> -->
+                </div>
+                
+                    <div class="">
+                        <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
+                            
+                            <form class="mb-5" action="{{ url_for('viewAppPrediction') }}" method="post">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Edad: </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="edad" name="edad" type="number" class="form-control bg-transparent border-primary p-4" 
+                                                    required="required" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Cantidad Dependientes: </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="cantDependientes" name="cantDependientes" type="number" class="form-control bg-transparent border-primary p-4" 
+                                                    required="required" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Cantidad de Relaciones: </label>
+                                            </div>
+                                            <div class="inputForm">
+                                            <input id="cantRelaciones" name="cantRelaciones" type="number" class="form-control bg-transparent border-primary p-4" 
+                                                required="required" />
+                                                </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Meses de Inactividad: </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="cantInactividad" name="cantInactividad" type="number" class="form-control bg-transparent border-primary p-4" 
+                                                    required="required" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Cantidad Contactos : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="cantContactos" name="cantContactos" type="number" class="form-control bg-transparent border-primary p-4" placeholder=" (ultimos 12 meses)"
+                                                    required="required" />
+                                            </div>  
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Limite Crediticio : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                            <input id="limCrediticio" name="limCrediticio" type="number" class="form-control bg-transparent border-primary p-4" 
+                                                required="required" step="any"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Saldo Total Revolvente : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="saldoRevolvente" name="saldoRevolvente" type="number" class="form-control bg-transparent border-primary p-4" 
+                                                    required="required" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Cambio Total de Monto : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="cambioTotalMonto" name="cambioTotalMonto" type="number" class="form-control bg-transparent border-primary p-4" placeholder="(Q4 a Q1)"
+                                                    required="required" step="any"/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Monto Total de Transacciones : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="montoTransac" name="montoTransac" type="number" class="form-control bg-transparent border-primary p-4"
+                                                    required="required" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Cantidad Total de Transacciones : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="cantTransac" name="cantTransac" type="number" class="form-control bg-transparent border-primary p-4"
+                                                    required="required" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Cambio Total de Cantidad : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="cambioTotalCantidad" name="cambioTotalCantidad" type="number" class="form-control bg-transparent border-primary p-4" placeholder="(Q4 a Q1)"
+                                                    required="required" step="any" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Promedio de Relación de Utilización : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <input id="promUtilizacion" name="promUtilizacion" type="number" class="form-control bg-transparent border-primary p-4" 
+                                                    required="required" step="any"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Genero : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <select id="genero" name="genero" class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
+                                                    <option selected disabled style="display: none;"> </option>
+                                                    <option value="0">Femenino</option>
+                                                    <option value="1">Masculino</option>
+                                                    
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Estado Civil : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <select id="estadoCivil" name="estadoCivil" class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
+                                                    <option selected disabled style="display: none;"> </option>
+                                                    <option value="0">Divorciado</option>
+                                                    <option value="1">Casado</option>
+                                                    <option value="2">Soltero</option>
+                                                    <option value="3">Desconocido</option>
+                                            
+                                                </select>
+                                             </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div class="labelForm">
+                                                <label class="labelText"> Categoria de Ingresos : </label>
+                                            </div>
+                                            <div class="inputForm">
+                                                <select id="catIngresos" name="catIngresos" class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
+                                                    <option selected disabled style="display: none;"> </option>
+                                                    <option value="0">Mayor De $120K</option>
+                                                    <option value="1">Entre $40k - $60k</option>
+                                                    <option value="2">Entre $60k - $80k</option>
+                                                    <option value="3">Entre $80k - $120k</option>
+                                                    <option value="4">Menos De $40k</option>
+                                                    <option value="5">Desconocido</option>
+                                                    
+                                                </select>
+                                            </div>
+                                        </div>
+                                            
+                                    </div>
+                                </div>
+                                <div style="padding-top: 50px;">
+                                    <button id="btnForm" class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Consultar</button>
+                                </div>
+                            </form>
+
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FORM End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5  pt-5 px-0 position-relative overlay-top">
+       
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="m-0 text-white">Desarrollo Aplicación Web</a></p>
+            <p class="mb-2 text-white">Copyright All Rights Reserved.</a></p>
+
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{{ url_for('static', filename='mail/jqBootstrapValidation.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='mail/contact.js') }}"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

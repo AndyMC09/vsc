@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PROYECTO APP WEB</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Andres y Alex" name="author">
+    <meta content="Proyecto de titulación" name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static',filename='lib/owlcarousel/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}"/>
+
+    <!-- Customized Bootstrap Stylesheet -->
+<!--     <link rel="stylesheet" href="{{url_for('static',filename='css/style.min.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar offer   py-5 text-center position-relative overlay-bottom">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="{{url_for('index')}}" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-color">PROJECT</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="{{url_for('index')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{url_for('informacion')}}" class="nav-item nav-link active">Proyecto</a>
+                    <a href="{{url_for('viewAppPrediction')}}" class="nav-item nav-link active">Predicción</a>
+                    <a href="{{url_for('estadistica')}}" class="nav-item nav-link active">Estadística</a>
+                    <a href="{{url_for('contacto')}}" class="nav-item nav-link active">Contacto</a>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+    
+ 
+
+    <!-- FORM  -->
+  <div class="container-fluid ">
+    <h1 class=" section-title color-text " style="font-size: 60px;"> DEFINICIONES CONCEPTUALES </h1>
+    
+    <div class="grupoTextos">
+        <div class="section-title "> INSTITUCIONES FINANCIERAS</div>
+        <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-4 py-0 py-lg-5">
+                <h5 class="mb-3">Las instituciones financieras son entidades que ofrecen servicios 
+                    relacionados con las finanzas, como la intermediación en transacciones monetarias, 
+                    prestamos, inversiones, gestión de activos, seguro y otros servicios. Estas 
+                    instituciones pueden ser en forma de bancos comerciales, cooperativas de crédito,
+                    compañías de seguro, fondo de inversión, mercados de valores, entre otros. 
+                    Su función principal es facilitar la intermediación y el flujo de dinero en la 
+                    economía, proporcionar servicios financieros o individuos, empresas y otras 
+                    organizaciones, por lo tanto “Una institución financiera es una compañía con ánimos 
+                    de lucro que tiene como actividad la prestación de servicios financieros a los 
+                    agentes económicos de la sociedad” (Cedeño & Bravo, 2020, pág. 26).
+                
+                </h5>
+            
+        
+            </div>
+            <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 image" src="{{ url_for('static', filename='img/banco.jpg') }}" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-4 py-0 py-lg-5">
+                <h5 class="mb-3">
+                    El modelo de negocio de las instituciones financiera va a depender del tipo de institución y de los servicios que ofrece.
+                    La entidad financiera puede ofrecer una amplia gama de procesos 
+                    y servicios para atender las necesidades financieras de sus clientes. De acuerdo 
+                    con los servicios financieros se han sofisticado de tal manera, que el mundo resulta 
+                    complejo delimitar sus actividades desde el depositario y el préstamo hasta servicios
+                     más moderno y sofisticados como factoring o la banca de inversión.
+                      (Cedeño & Bravo, 2020, pág. 26)
+                    
+                </h5>
+            
+        
+            </div>
+        </div>
+    </div>
+
+    <div class="grupoTextos">
+            <div class="section-title "> INTELIGENCIA ARTIFICIAL </div>
+            <div class="container">
+            
+                <div class="row">
+                    <div class="col-lg-4 py-0 py-lg-5">
+                        <h5 class="mb-3">Para Martínez et al., (2019), la inteligencia artificial (IA) se refiere a 
+                            la simulación de los procesos cognitivos humanos en máquinas las cuales interactúan con
+                            sistemas informáticos para adquirir grandes cantidades de información y reglas que les 
+                            permite realizar tareas específicas. Por otro lado “la inteligencia artificial se refiere 
+                            al uso de una computadora, robot u otra máquina para llevar a cabo un comportamiento 
+                            inteligente similar al humano” (Bo Lin, 2023).</h5>
+                    
+                
+                    </div>
+                    <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="{{ url_for('static', filename='img/robot.png') }}" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 py-0 py-lg-5">
+                        <h5 class="mb-3">La historia de la inteligencia artificial (IA) surge de la idea de crear 
+                            máquinas capaces de realizar tareas que requiere inteligencia humana, algunos hitos 
+                            más importantes de la IA de acuerdo con Abeliuk & Gutiérrez (2021), durante la segunda 
+                            guerra mundial, se desarrollaron las primeras computadoras que sentó las bases para la 
+                            investigación de la IA. </h5>
+                    
+                
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+    
+    <div class="grupoTextos"> 
+        <div class="section-title "> MACHINE LEARNING </div>
+        <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-4 py-0 py-lg-5">
+                <h5 class="mb-3">Desde el punto de vista de Villachica et al., (2020), 
+                    Machine Learning (ML) o lenguaje supervisado en la rama de la inteligencia a
+                    rtificial es el subcampo de las ciencias de la computación cuyo objetivo radica 
+                    en que la máquinas o computadoras aprenda de forma automática. El aprendizaje 
+                    automático se enfoca en el desarrollo de algoritmos y modelos capaces de permitir 
+                    a las computadoras aprender y mejorar automáticamente a través del uso de datos y 
+                    experiencias previas, sin necesidad de programación explícita</h5>
+            
+        
+            </div>
+            <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 image" src="{{ url_for('static', filename='img/machine.png') }}" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-4 py-0 py-lg-5">
+                <h5 class="mb-3">En lugar de seguir instrucciones preestablecida, utiliza 
+                    técnicas estadísticas para encontrar patrones y relaciones en los datos, 
+                    lo cual le permite hacer predicciones, tomar decisiones y resolver tareas específicas. 
+                    El aprendizaje automático es un subcampo de la inteligencia artificial en el que una computadora observa un conjunto determinado de datos y genera un modelo basado en los datos de entrada que se pueden utilizar para resolver problemas. (Shanaka, y otros, 2022)
+                    </h5>
+            
+        
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="grupoTextos"> 
+        
+        <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-5 py-0 py-lg-5">
+                <div class="section-title "> LENGUAJE SUPERVISADO </div>
+                
+               <div class="d-flex justify-content-center" style="  padding-bottom: 50px;">
+                    <img class="imagenText " src="{{ url_for('static', filename='img/lenguajeSupervisado.png') }}" >
+               </div>
+            
+
+                <h5 class="mb-3">Desde la posición de Mahesh (2018), el aprendizaje supervisado 
+                    implica la tarea de entrenar un modelo de aprendizaje automático para asignar 
+                    entradas a salidas en ejemplos de pares entrada-salida. Se deduce una función
+                     a partir de datos etiquetados de entrenamiento, que constan de un conjunto de
+                      ejemplo de entrenamiento. Los algoritmos de aprendizaje supervisado son aquellos
+                       que requiere de ayuda externa, el conjunto de datos se divide en dos partes 
+                       en entramiento y prueba lo que en una datase tiene una variable de salida
+                       que será predicha o clasificada.  </h5>
+            
+        
+            </div>
+            <div class="col py-6 py-lg-0" style="min-height: 500px;">
+       
+            </div>
+            <div class="col-lg-5 py-0 py-lg-5" >
+                <div class="section-title "> 
+                    LENGUAJE NO SUPERVISADO 
+                </div>
+
+                <div class="d-flex justify-content-center" style="  padding-bottom: 50px;">
+                    <img class="imagenText " src="{{ url_for('static', filename='img/lenguajeNoSupervisado.png') }}" >
+               </div>
+
+                <h5 class="mb-3">En el machine learning el aprendizaje no supervisado es usado como
+                     herramienta donde particularmente los algoritmos son de agrupamiento, es más 
+                     utilizado en la minería de datos para agrupar, ejemplo grupos de objetos similares 
+                     en lugar de dar predicciones directamente, también los algoritmos que se puede usar 
+                     para dar predicciones, pero comparativamente donde se han reportado aplicaciones en 
+                     el campo de la evaluación. (Boa Wang et al., 2019)
+                    De acuerdo con Hermitaño (2022), la tarea principal de estos algoritmos es reconocer 
+                    patrones a partir de datos no etiquetados. No hay datos etiquetados disponibles para 
+                    el entrenamiento y la atención se centra en resolver problemas de agrupamiento, 
+                    detección de valores atípicos, reducción de dimensionalidad y detección de anomalías. 
+                    </h5>
+            
+        
+            </div>
+        </div>
+    </div>
+
+
+
+  </div>
+    <!-- FORM End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5  pt-5 px-0 position-relative overlay-top">
+       
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="m-0 text-white">Desarrollo Aplicación Web</a></p>
+            <p class="mb-2 text-white">Copyright All Rights Reserved.</a></p>
+
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{{ url_for('static', filename='mail/jqBootstrapValidation.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='mail/contact.js') }}"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

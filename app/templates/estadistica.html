@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ESTADISTICA | PROYECTO APP WEB</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Andres y Alex" name="author">
+    <meta content="Proyecto de titulación" name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static',filename='lib/owlcarousel/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}"/>
+
+    <!-- Customized Bootstrap Stylesheet -->
+<!--     <link rel="stylesheet" href="{{url_for('static',filename='css/style.min.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar offer   py-5 text-center position-relative overlay-bottom">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="{{url_for('index')}}" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-color">PROJECT</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="{{url_for('index')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{url_for('informacion')}}" class="nav-item nav-link active">Proyecto</a>
+                    <a href="{{url_for('viewAppPrediction')}}" class="nav-item nav-link active">Predicción</a>
+                    <a href="{{url_for('estadistica')}}" class="nav-item nav-link active">Estadística</a>
+                    <a href="{{url_for('contacto')}}" class="nav-item nav-link active">Contacto</a>
+                </div>
+            </div>
+        </nav>
+        <!-- <h1 class=" text-white ">DESARROLLO DE UN MODELO DE MACHINE LEARNING
+            PARA LA PREDICCIÓN DE PÉRDIDA DE CLIENTES CON TARJETA DE CRÉDITO DE INSTITUCIONES FINANCIERAS</h1> -->
+    </div>
+    
+
+    <div>
+        <div class="section-title"> Graficos Estadísticos</div>
+        <h2 class="section-title-temas">Distribuciones por variables</h2>
+    </div>
+    
+    <div class="base">
+        <div class="baseBtns">
+            <div class="grupoBotones">
+                <button class="btnEstadistico" id="btn-edad"> Edad</button>
+                <button class="btnEstadistico" id="btn-educacion"> Nivel de Educación</button>
+                <button class="btnEstadistico" id="btn-estado"> Estado Civil</button>
+                <button class="btnEstadistico" id="btn-ingresos"> Categoria de Ingresos</button>
+                <button class="btnEstadistico" id="btn-crediticio"> Limite Crediticio</button>
+                <button class="btnEstadistico" id="btn-cantRelaciones"> Cantidad de Relaciones</button>
+
+                <button class="btnEstadistico" id="btn-avg"> Promedio de Fondos Disponibles</button>
+                <button class="btnEstadistico" id="btn-meses"> Cantidad de Meses Inactivos (Ultimo Año)</button>
+                <button class="btnEstadistico" id="btn-contactos"> Cantidad de Contactos (Ultimo Año)</button>
+                <button class="btnEstadistico" id="btn-montoTransac"> Monto Total de Transacciones</button>
+                <button class="btnEstadistico" id="btn-cantTransac"> Cantidad Total de Transacciones</button>
+            </div>
+
+
+        </div>
+        
+        <div class="grafico-container">
+            <img id="imagen-grafico" src="{{ url_for('mostrar_edad') }}" alt="Gráfico">
+        </div>
+    
+        <script>
+            var imagenGrafico = document.getElementById("imagen-grafico");
+            var btnEdad = document.getElementById("btn-edad");
+            var btnEducacion = document.getElementById("btn-educacion");
+            var btnEstado = document.getElementById("btn-estado");
+            var btnIngresos = document.getElementById("btn-ingresos");
+            var btnCantRelaciones = document.getElementById("btn-cantRelaciones");
+            var btnCrediticio = document.getElementById("btn-crediticio");
+            var btnAvg = document.getElementById("btn-avg");
+            var btnMeses = document.getElementById("btn-meses");
+            var btnContactos = document.getElementById("btn-contactos");
+            var btnMontoTransac = document.getElementById("btn-montoTransac");
+            var btnCantTransac = document.getElementById("btn-cantTransac");
+            
+            function mostrarGrafico(imagen) {
+                imagenGrafico.src = imagen;
+            }
+            
+            btnEdad.addEventListener("click", function() {
+                mostrarGrafico('/mostrar_edad');
+            });
+            btnEducacion.addEventListener("click", function() {
+                mostrarGrafico('/mostrar_educacion');
+            });
+            btnEstado.addEventListener("click", function() {
+                mostrarGrafico('/mostrar_estado');
+                });
+            btnIngresos.addEventListener("click", function(){
+                mostrarGrafico("/mostrar_ingresos");
+            })
+            btnCantRelaciones.addEventListener('click',function () {
+                mostrarGrafico('/mostrar_cantRelaciones')
+            })
+            btnCrediticio.addEventListener("click", function (){
+                mostrarGrafico('/mostrar_crediticio')
+            })
+            btnAvg.addEventListener("click", function (){
+                mostrarGrafico('/mostrar_avg')
+            })
+            btnMeses.addEventListener("click", function (){
+                mostrarGrafico('/mostrar_meses')
+            })
+            btnContactos.addEventListener("click", function (){
+                mostrarGrafico('/mostrar_contactos')
+            })
+            btnCrediticio.addEventListener("click", function (){
+                mostrarGrafico('/mostrar_crediticio')
+            })
+            btnMontoTransac.addEventListener("click", function (){
+                mostrarGrafico('/mostrar_montoTransac')
+            })
+               
+            btnCantTransac.addEventListener("click", function (){
+                mostrarGrafico('/mostrar_cantTransac')
+            })
+                        
+        </script>
+        
+    </div>
+    
+</div>
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5  pt-5 px-0 position-relative overlay-top">
+       
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="m-0 text-white">Desarrollo Aplicación Web</a></p>
+            <p class="mb-2 text-white">Copyright All Rights Reserved.</a></p>
+
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{{ url_for('static', filename='mail/jqBootstrapValidation.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='mail/contact.js') }}"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
