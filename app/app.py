@@ -20,7 +20,7 @@ import io
 import os
 
 #Leer archivos del modelo predictivo
-modelo_cargado = pickle.load(open('app\modelo_predictivo_tres.pkl','rb'))
+modelo_cargado = pickle.load(open('app\model\modelo_predictivo.pkl','rb'))
 #Leer archivo csv del dataframe
 archivo_dfCSV = 'app\df_bank_balanced.csv'
 dfCsv = pd.read_csv(archivo_dfCSV )
@@ -226,4 +226,4 @@ def viewAppPrediction():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 5000))
+    app.run(host='prediccionesinstitucionesfinancierasgye.azurewebsites.net', port=os.environ.get('PORT', 5000))
