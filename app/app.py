@@ -17,7 +17,7 @@ from sklearn.preprocessing import label_binarize
 from sklearn.metrics import roc_curve, auc
 from sklearn.metrics import roc_auc_score
 import io
-
+import os
 #Leer archivos del modelo predictivo
 modelo_cargado = pickle.load(open('app\modelo_predictivo_tres.pkl','rb'))
 #Leer archivo csv del dataframe
