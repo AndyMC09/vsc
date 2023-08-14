@@ -1,2 +1,2 @@
 [config]
-command = \vsc\startup.txt
+command = startup.txt
