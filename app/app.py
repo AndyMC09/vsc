@@ -227,3 +227,4 @@ def viewAppPrediction():
 
 if __name__ == '__main__':
     app.run(host='prediccionesinstitucionesfinancierasgye.azurewebsites.net', port=os.environ.get('PORT', 5000))
+ 
