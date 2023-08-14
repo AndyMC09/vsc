@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/bc34eceb-d0e7-460b-81ef-fd107c9172e7/resourceGroups/PrediccionesInstitucionesFinancierasGye_group/providers/Microsoft.Web/sites/PrediccionesInstitucionesFinancierasGye",
+    "appService.deploySubpath": "."
+}
