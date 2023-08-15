@@ -1,0 +1,2 @@
+[config]
+command = bash -c "echo Running startup.txt && source startup.txt"
