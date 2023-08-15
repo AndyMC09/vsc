@@ -1,2 +1,2 @@
 [config]
-command = startup.txt
+command = python startup.txt
