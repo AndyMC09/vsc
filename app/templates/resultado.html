@@ -68,16 +68,23 @@
                 <h2>Predicción:</h2>
                 <p style="font-size: 25px;">
                     {% if prediccion == 0 %}
-                        CLIENTE RECHAZADO
+                        CLIENTE SE RETIRA EN CORTO PLAZO
+                        <h4> <b>Sugerencia:</b><h4 style="color:red"> Rechazar Cliente </h4></h4>
                     {% elif prediccion == 1 %}
-                        CLIENTE APROBADO
+                        CLIENTE PERMANECE EN EL LARGO PLAZO
+                        <h4> <b>Sugerencia:</b><h4 style="color:green"> Aceptar Cliente </h4></h4>
                     {% else %}
-                        Predicción desconocida
+                        PREDICCIÓN DESCONOCIDA
                     {% endif %}
                 </p>
             </div>
-            <div>
-                <img src="data:image/png;base64,{{ img_data }}" alt="Curva ROC">
+            <div class="imgResult">
+                {% if prediccion == 0 %}
+                    <img class="positionImg " src="{{ url_for('static', filename='img/Rechazado.jpg') }}" style="object-fit: cover;">
+                {% elif prediccion == 1 %}
+
+                    <img class="positionImg " src="{{ url_for('static', filename='img/Aprobado.jpg') }}" style="object-fit: cover;">
+                {% endif %}
             </div>
         </div>
     </div>

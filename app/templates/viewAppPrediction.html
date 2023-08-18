@@ -199,7 +199,7 @@
                                                 <label class="labelText"> Genero : </label>
                                             </div>
                                             <div class="inputForm">
-                                                <select id="genero" name="genero" class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
+                                                <select id="genero" name="genero" class="custom-select bg-transparent border-primary px-4" style="height: 49px;"required="required">
                                                     <option selected disabled style="display: none;"> </option>
                                                     <option value="0">Femenino</option>
                                                     <option value="1">Masculino</option>
@@ -212,7 +212,7 @@
                                                 <label class="labelText"> Estado Civil : </label>
                                             </div>
                                             <div class="inputForm">
-                                                <select id="estadoCivil" name="estadoCivil" class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
+                                                <select id="estadoCivil" name="estadoCivil" class="custom-select bg-transparent border-primary px-4" style="height: 49px;"required="required">
                                                     <option selected disabled style="display: none;"> </option>
                                                     <option value="0">Divorciado</option>
                                                     <option value="1">Casado</option>
@@ -228,13 +228,14 @@
                                                 <label class="labelText"> Categoria de Ingresos : </label>
                                             </div>
                                             <div class="inputForm">
-                                                <select id="catIngresos" name="catIngresos" class="custom-select bg-transparent border-primary px-4" style="height: 49px;">
+                                                <select id="catIngresos" name="catIngresos" class="custom-select bg-transparent border-primary px-4" style="height: 49px;"required="required">
                                                     <option selected disabled style="display: none;"> </option>
-                                                    <option value="0">Mayor De $120K</option>
+                                                    <option value="4">Menos De $40k</option>
                                                     <option value="1">Entre $40k - $60k</option>
                                                     <option value="2">Entre $60k - $80k</option>
                                                     <option value="3">Entre $80k - $120k</option>
-                                                    <option value="4">Menos De $40k</option>
+                                                    
+                                                    <option value="0">Mayor De $120K</option>
                                                     <option value="5">Desconocido</option>
                                                     
                                                 </select>
@@ -244,7 +245,7 @@
                                     </div>
                                 </div>
                                 <div style="padding-top: 50px;">
-                                    <button id="btnForm" class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Consultar</button>
+                                    <button id="btnForm" class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Predecir</button>
                                 </div>
                             </form>
 

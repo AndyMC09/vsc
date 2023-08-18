@@ -12,12 +12,9 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-#para roc
-from sklearn.preprocessing import label_binarize
-from sklearn.metrics import roc_curve, auc
-from sklearn.metrics import roc_auc_score
+
+
 import io
-import os
 
 #Leer archivos del modelo predictivo
 modelo_cargado = pickle.load(open('app\model\modelo_predictivo.pkl','rb'))
@@ -153,7 +150,120 @@ def contacto():
 def resultado():
     return render_template('resultado.html')
 
+
 @app.route('/viewAppPrediction',methods=['POST','GET'])
+def viewAppPrediction(): 
+    if request.method == 'POST':
+        # Obtener los datos del formulario
+        datos = [float(x) for x in request.form.values()]
+        columData = ["Customer_Age", "Dependent_count", "Total_Relationship_Count",
+                     "Months_Inactive_12_mon", "Contacts_Count_12_mon", "Credit_Limit",
+                     "Total_Revolving_Bal", "Total_Amt_Chng_Q4_Q1", "Total_Trans_Amt",
+                     "Total_Trans_Ct", "Total_Ct_Chng_Q4_Q1", "Avg_Utilization_Ratio",
+                     "Gender_num", "Marital_Status_num", "Income_Category_num"]
+
+        print("recepcion ", datos)
+    
+        #Creando el arreglo, reorganizando sus elementos
+        valorDatos = np.array(datos).reshape(-1, 1)
+        np.set_printoptions(suppress=True)
+        print(valorDatos)
+        
+
+        scaler = MinMaxScaler()
+        
+
+        #se realiza la normalizacion
+        valorDatos = scaler.fit_transform(valorDatos)
+        print("normali",valorDatos)
+        
+        df = pd.DataFrame(data=valorDatos.T, columns=columData)  
+        print(df)
+
+
+        #NEW
+        #OBTENER DATOS
+        edad = float(request.form.get('edad'))
+        cantDependientes = int(request.form.get('cantDependientes'))
+        cantRelaciones = int(request.form.get('cantRelaciones'))
+        cantInactividad = int(request.form.get('cantInactividad'))
+        cantContactos = int(request.form.get('cantContactos'))
+        limCrediticio = float(request.form.get('limCrediticio'))
+        saldoRevolvente = float(request.form.get('saldoRevolvente'))
+        cambioTotalMonto = float(request.form.get('cambioTotalMonto'))
+        montoTransac = float(request.form.get('montoTransac'))
+        cantTransac = int(request.form.get('cantTransac'))
+        cambioTotalCantidad = float(request.form.get('cambioTotalCantidad'))
+        promUtilizacion = float(request.form.get('promUtilizacion'))
+        genero = int(request.form.get('genero'))
+        estadoCivil = int(request.form.get('estadoCivil'))
+        catIngresos = int(request.form.get('catIngresos'))
+
+        #PRESENTAR DATOS
+        print("Edad:", edad)
+        print("Cantidad de Dependientes:", cantDependientes)
+        print("Cantidad de Relaciones:", cantRelaciones)
+        print("Meses de Inactividad:", cantInactividad)
+        print("Cantidad de Contactos:", cantContactos)
+        print("Límite Crediticio:", limCrediticio)
+        print("Saldo Total Revolvente:", saldoRevolvente)
+        print("Cambio Total de Monto:", cambioTotalMonto)
+        print("Monto Total de Transacciones:", montoTransac)
+        print("Cantidad Total de Transacciones:", cantTransac)
+        print("Cambio Total de Cantidad:", cambioTotalCantidad)
+        print("Promedio de Relación de Utilización:", promUtilizacion)
+        print("Género:", genero)
+        print("Estado Civil:", estadoCivil)
+        print("Categoría de Ingresos:", catIngresos)
+        
+        #CALCULO DATOS
+        calcEdad =(edad-26)/(68-26)
+        calcDependientes =(cantDependientes -0)/(5-0)
+        calcRelaciones = (cantRelaciones - 1)/(6-1)
+        calcInactividad = (cantInactividad -0)/(6-0)
+        calcContactos = (cantContactos - 0)/(6-0)
+        calcLimCrediticio =(limCrediticio - 1438.3)/(34516-1438.3)
+        calcSaldoRevolvente = (saldoRevolvente -0)/(2517-0)
+        calcCambioTotalmonto =(cambioTotalMonto - 0)/(3.355-0)
+        calcMontoTransac=(montoTransac -  510)/(17995-510)
+        calcCantTransac =(cantTransac - 10)/(139-10)
+        calcCambioTotalCantidad =(cambioTotalCantidad -0)/(3-0)
+        calcPromUtilizacion =(promUtilizacion -0)/(0.999-0)
+        calcGenero=(genero - 0)/(1-0)
+        calcEstadoCivil=(estadoCivil-0)/(3-0)
+        calcCatIngresos=(catIngresos - 0)/(5-0)
+        
+        #LISTAR DATOS
+        listaDatos =[calcEdad,calcDependientes,calcRelaciones,calcInactividad,
+                     calcContactos,calcLimCrediticio,calcSaldoRevolvente,
+                      calcCambioTotalmonto,calcMontoTransac,calcCantTransac,
+                       calcCambioTotalCantidad,calcPromUtilizacion,calcGenero,
+                        calcEstadoCivil, calcCatIngresos]
+        
+        print("NEW",listaDatos)
+        #CREA UN ARREGLO CON LA LISTA
+        dataNEW=np.array([listaDatos])
+        print("NEW",dataNEW)
+        #CREA DATAFRAME APARTIR DEL ARREGLO E INCLUYE LAS COLUMNAS 
+        dataDF = pd.DataFrame(data=dataNEW, columns=columData)  
+        print("NEW",dataDF)
+        #REALIZA LA PREDICCIÓN
+        prediccion = modelo_cargado.predict((dataDF))
+        print(prediccion)
+
+        # Crear un diccionario que mapee el nombre de la columna a su valor normalizado
+        data_dict = {column: valor for column, valor in zip(columData, dataNEW.flatten())}
+
+        # Crear una lista de tuplas (nombre de la columna, valor normalizado)
+        datos_normalizados = [(column, valor) for column, valor in data_dict.items()]
+
+        # Renderizar la plantilla y pasar los datos al contexto
+        return render_template('resultado.html', datos=datos_normalizados, prediccion=prediccion)
+    else:
+        return render_template('viewAppPrediction.html')
+
+
+"""@app.route('/viewAppPrediction',methods=['POST','GET'])
 def viewAppPrediction(): 
     if request.method == 'POST':
         # Obtener los datos del formulario
@@ -176,10 +286,13 @@ def viewAppPrediction():
 
         #se realiza la normalizacion
         valorDatos = scaler.fit_transform(valorDatos)
-        print(valorDatos)
-
+        print("normali",valorDatos)
+        
         df = pd.DataFrame(data=valorDatos.T, columns=columData)  
-        print(df.T.to_string())
+        print(df)
+
+        prediccion = modelo_cargado.predict((df))
+        print(prediccion)
 
         # Crear un diccionario que mapee el nombre de la columna a su valor normalizado
         data_dict = {column: valor for column, valor in zip(columData, valorDatos.flatten())}
@@ -187,44 +300,29 @@ def viewAppPrediction():
         # Crear una lista de tuplas (nombre de la columna, valor normalizado)
         datos_normalizados = [(column, valor) for column, valor in data_dict.items()]
 
-        prediccion = modelo_cargado.predict((df))
-        print(prediccion)
-
-        #CURVA ROC
-        probs = modelo_cargado.predict_proba(df)
-        probs_pos = probs[:, 1]  # Probabilidades de la clase positiva
-
-        # Etiquetas verdaderas
-        y_true = label_binarize([1], classes=[0, 1])
-
-        # Calcular la curva ROC
-        fpr, tpr, thresholds = roc_curve(y_true, probs_pos)
-        roc_auc = auc(fpr, tpr)
-
-        # Crear la gráfica de la curva ROC
-        plt.figure()
-        plt.plot(fpr, tpr, color='darkorange', lw=2, label='Curva ROC (área = %0.2f)' % roc_auc)
-        plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-        plt.xlim([0.0, 1.0])
-        plt.ylim([0.0, 1.05])
-        plt.xlabel('Tasa de Falsos Positivos')
-        plt.ylabel('Tasa de Verdaderos Positivos')
-        plt.title('Curva ROC')
-        plt.legend(loc="lower right")
-
-        # Convierte la gráfica en un formato embebible en HTML
-        buffer = io.BytesIO()
-        plt.savefig(buffer, format='png')
-        buffer.seek(0)
-        img_data = base64.b64encode(buffer.read()).decode('utf-8')
-        plt.close()
+        
 
         # Renderizar la plantilla y pasar los datos al contexto
-        return render_template('resultado.html', datos=datos_normalizados, prediccion=prediccion, img_data=img_data)
+        return render_template('resultado.html', datos=datos_normalizados, prediccion=prediccion)
     else:
-        return render_template('viewAppPrediction.html')
+        return render_template('viewAppPrediction.html')"""
+
+""" @app.route('/viewSupportVector',methods=['POST','GET'])
+def viewSupportVector():
+    if request.method=='POST':
+        datos=[request.form.values()]
+
+        json=request.get_json(force=True)
+        datos = json['datos']
+        
+        clasif = joblib.load('modelo.pkl')
+        prediccion=clasif.predict(datos)
+
+
+    return render_template('viewSupportVector.html') """
+
+
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000) 
- 
+    app.run(debug=True, port=5000)
