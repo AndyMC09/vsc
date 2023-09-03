@@ -14,7 +14,6 @@ import base64
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 
-import io
 
 #Leer archivos del modelo predictivo
 modelo_cargado = pickle.load(open('app\model\modelo_predictivo.pkl','rb'))
@@ -248,9 +247,12 @@ def viewAppPrediction():
         #CREA DATAFRAME APARTIR DEL ARREGLO E INCLUYE LAS COLUMNAS 
         dataDF = pd.DataFrame(data=dataNEW, columns=columData)  
         print("NEW",dataDF)
+
+
         #REALIZA LA PREDICCIÓN
         prediccion = modelo_cargado.predict((dataDF))
         print(prediccion)
+        
 
         # Crear un diccionario que mapee el nombre de la columna a su valor normalizado
         data_dict = {column: valor for column, valor in zip(columData, dataNEW.flatten())}
