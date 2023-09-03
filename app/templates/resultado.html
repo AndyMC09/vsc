@@ -55,15 +55,7 @@
     <div>
         <div class=" section-title">RESULTADOS</div>
         <div class="container" style="align-items: center; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-            <div class="result-box">
-                <h2>Datos ingresados:</h2>
-                <ul style="font-size: 20px;">
-                    {% for columna, valor in datos %}
-                    <li><strong>{{ columna }}:</strong>  {{ valor|float|round(4) }}</li>
-                    <br>
-                    {% endfor %}
-                </ul>
-            </div>
+            
             <div class="result-box">
                 <h2>Predicción:</h2>
                 <p style="font-size: 25px;">

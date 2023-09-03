@@ -22,11 +22,12 @@ modelo_cargado = pickle.load(open('app\model\modelo_predictivo.pkl','rb'))
 archivo_dfCSV = 'app\df_bank_balanced.csv'
 dfCsv = pd.read_csv(archivo_dfCSV )
 
-
+#CREAR INSTANCIA DE UNA APLICACIÓN FLASK
 app = Flask(__name__)
 
 app.static_folder = 'static'
 
+#DEFINE RUTA Y FUNCIÓN DE VISTA
 @app.route('/')
 def index():
     return render_template('index.html')
