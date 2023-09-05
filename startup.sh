@@ -1,4 +1,5 @@
 python -m venv env
 .\env\Scripts\activate
 
-python app\app.py
+
+python /workspaces/vsc/app/app.py
