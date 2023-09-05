@@ -16,7 +16,7 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 
 #Leer archivos del modelo predictivo
-modelo_cargado = pickle.load(open('app\model\modelo_predictivo.pkl','rb'))
+modelo_cargado = pickle.load(open('/workspaces/vsc/app/model/modelo_predictivo.pkl','rb'))
 #Leer archivo csv del dataframe
 archivo_dfCSV = 'app\df_bank_balanced.csv'
 dfCsv = pd.read_csv(archivo_dfCSV )
