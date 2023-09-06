@@ -1,5 +1,5 @@
 python -m venv env
-./workspaces/vsc/env/Scripts/activate
+./vsc/env/Scripts/activate
 
 
-python /workspaces/vsc/app/app.py
+python /vsc/app/app.py
