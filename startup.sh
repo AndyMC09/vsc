@@ -1,5 +1,5 @@
 python -m venv antenv
-./vsc/antenv/Scripts/activate
+/workspaces/vsc/antenv/Scripts/activate
 
 
-python /vsc/app/app.py
+python /workspaces/vsc/app/app.py
