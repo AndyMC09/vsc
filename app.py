@@ -1,6 +1,6 @@
 #importar librerias
 import matplotlib
-matplotlib.use('Agg')
+matplotlib.use("Agg")
 from flask import Flask, request, render_template, jsonify 
 import pandas as pd
 import numpy as np
