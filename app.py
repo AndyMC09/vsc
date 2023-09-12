@@ -322,10 +322,12 @@ def viewSupportVector():
         prediccion=clasif.predict(datos)
 
 
-    return render_template('viewSupportVector.html') """
-
-
-
-
-if __name__ == '__main__':
+    return render_template('viewSupportVector.html') 
+    if __name__ == '__main__':
     app.run(port=8000)
+    
+    """
+
+
+
+
